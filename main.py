@@ -95,10 +95,9 @@ def get_by_id(transaction_id):
             for t in transactions:
                 if t['transaction_id'] == f"{transaction_id}":
                     return t
-            # if not tx:
+
             return JSONResponse(status_code=404, content={"message": f"Transaction {transaction_id} not found"})
-            #
-            # return tx
+
 
     except Exception as e:
         print("Error occurred while getting transaction by id for id", transaction_id, e)
